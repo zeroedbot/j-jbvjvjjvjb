@@ -8,6 +8,7 @@
 from . import *
 
 
-@vc_asst("stop")
+@vc_asst("(leave|stop)$")
 async def stop_vc(event):
     CallsClient.stop_playout()
+    await eor(event, "∆ Stopped Successfully")
