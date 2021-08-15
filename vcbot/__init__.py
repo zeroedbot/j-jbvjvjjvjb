@@ -125,4 +125,5 @@ def vc_asst(dec):
             func,
             events.NewMessage(incoming=True, pattern=pattern, from_users=VC_AUTHS()),
         )
+
     return ult
