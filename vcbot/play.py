@@ -38,10 +38,14 @@ async def join_handler(event):
     except RuntimeError:
         return await x.edit("No voice call active !")
     await x.delete()
+    if event.chat_id in CURRENT.keys() and CURRENT[event.chat_id]:
+        add_to_queue(event.chat_id, song, qsong, inline_mention(event.sender), duration)
+        return await event.reply("Added {qsong} to Queue at #{list(QUEUE[chat.id].keys())[-1]}")
     await event.reply(
         "Started playing {} in {}.\nDuration: {}".format(
             title, event.chat_id, time_formatter(duration * 1000)
         ),
         file=thumb,
     )
+    CURRENT.update({event.chat_id, True})
     # os.remove(song)
