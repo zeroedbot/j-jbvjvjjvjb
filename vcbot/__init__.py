@@ -24,6 +24,7 @@ from youtubesearchpython import VideosSearch
 
 LOG_CHANNEL = int(udB.get("LOG_CHANNEL"))
 QUEUE = {}
+CURRENT = {}
 
 _yt_base_url = "https://www.youtube.com/watch?v="
 vcusername = asst.me.username
