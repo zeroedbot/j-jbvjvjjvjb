@@ -7,10 +7,12 @@
 
 from . import *
 
+
 @vc_asst("pause")
 async def aoah(e):
     CallsClient.pause_playout()
     await eor(e, "∆ Paused.")
+
 
 @vc_asst("pause")
 async def aoah(e):
