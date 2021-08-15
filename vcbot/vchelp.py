@@ -9,6 +9,6 @@
 HELP_TEXT = "**View All Vc Commands Here :**\nhttps://telegra.ph/Vc-Commands-07-17-2"
 
 
-@vc_asst"vchelp")
+@vc_asst("vchelp")
 async def pass_it(message):
     await eor(message, HELP_TEXT)
