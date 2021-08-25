@@ -22,7 +22,7 @@ async def play_music_(event):
 
     xx = await eor(event, "`Processing...`")
 
-    reply = await event.get_reply_message() if event.reply_to_msg_id else None
+    reply = await event.get_reply_message()
     args = event.text.split(" ", 1)
     chat = (
         event.chat_id
@@ -34,7 +34,7 @@ async def play_music_(event):
     try:
         song = args[1]
     except IndexError:
-        if not reply:
+        if not (reply and reply.media):
             return await eod(
                 xx, "Please specify a song name or reply to a audio file !", time=10
             )
